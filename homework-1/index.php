@@ -32,7 +32,7 @@ if ($age1 >= 18 && $age1 <= 65) {
 } elseif ($age1 > 65) {
     echo 'Вам пора на пенсию<hr>';
 } elseif ($age1 >= 1 && $age1 <= 17) {
-    echo  'Вам ещё рано работать<hr>';
+    echo 'Вам ещё рано работать<hr>';
 } else {
     echo 'Неизвестный возраст<hr>';
 }
@@ -79,34 +79,35 @@ $car [] = $toyota;
 $car [] = $opel;
 
 echo 'CAR bmv: <br>' . $car[0]['model'] . ' - ' . $car[0]['speed'] . ' - ' .
-        $car[0]['doors'] .  ' - ' . $car[0]['year'] . '<br>';
-echo 'CAR toyota: <br>' . $car[1]['model'] .  ' - ' .  $car[1]['speed'] .  ' - ' .
-        $car[1]['doors'] .  ' - ' .  $car[1]['year'] .  '<br>';
-echo 'CAR opel: <br>' .  $car[2]['model'] .  ' - ' .  $car[2]['speed'] .  ' - ' .
-        $car[2]['doors'] .  ' - ' .  $car[2]['year'] .  '<hr>';
+    $car[0]['doors'] . ' - ' . $car[0]['year'] . '<br>';
+echo 'CAR toyota: <br>' . $car[1]['model'] . ' - ' . $car[1]['speed'] . ' - ' .
+    $car[1]['doors'] . ' - ' . $car[1]['year'] . '<br>';
+echo 'CAR opel: <br>' . $car[2]['model'] . ' - ' . $car[2]['speed'] . ' - ' .
+    $car[2]['doors'] . ' - ' . $car[2]['year'] . '<hr>';
 ?>
-<!--Задание #7-->
+    <!--Задание #7-->
 
-<table cellpadding = "5" border = "1">
-<?php
-for ($r = 1; $r <= 10; $r++) {
-    echo '<tr>';
-    for ($c = 1; $c <= 10; $c++) {
-        echo '<td>';
-        $result = ($r * $c);
-        if (($result % 2) == 0) {
-            echo '(' . $result . ')';
-        } elseif (($result % 2) == 1) {
-            echo '[' . $result . ']';
-        } else {
-            echo $result;
+    <table cellpadding="5" border="1">
+        <?php
+        for ($r = 1; $r <= 10; $r++) {
+            echo '<tr>';
+            for ($c = 1; $c <= 10; $c++) {
+                echo '<td>';
+                $result = ($r * $c);
+                if (($result % 2) == 0) {
+                    echo '(' . $result . ')';
+                } elseif (($result % 2) == 1) {
+                    echo '[' . $result . ']';
+                } else {
+                    echo $result;
+                }
+                echo '</td>';
+            }
+            echo '</tr>';
         }
-        echo '</td>';
-    }
-    echo '</tr>';
-}
-?>
-</table> <hr>
+        ?>
+    </table>
+    <hr>
 
 <?php
 //Задание #8
