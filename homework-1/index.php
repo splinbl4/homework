@@ -47,27 +47,12 @@ if ($age1 >= 18 && $age1 <= 65) {
 //Задание #5
 // Оптимизировать, устранить дублирование
 
-$day = 5;
+$day = 55;
 switch ($day) {
-    case 1:
+    case (1 <= $day && $day <= 5):
         echo 'Это рабочий день<hr>';
         break;
-    case 2:
-        echo 'Это рабочий день<hr>';
-        break;
-    case 3:
-        echo 'Это рабочий день<hr>';
-        break;
-    case 4:
-        echo 'Это рабочий день<hr>';
-        break;
-    case 5:
-        echo 'Это рабочий день<hr>';
-        break;
-    case 6:
-        echo 'Это выходной день<hr>';
-        break;
-    case 7:
+    case (6 <= $day && $day <= 7):
         echo 'Это выходной день<hr>';
         break;
     default:
@@ -78,21 +63,23 @@ switch ($day) {
 //Задание #6
 // Использовать циклы для вывода
 
-$bmw = ['model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => '2015'];
-$toyota = ['model' => 'Camry', 'speed' => 130, 'doors' => 4, 'year' => '2016'];
-$opel = ['model' => 'Astra', 'speed' => 120, 'doors' => 5, 'year' => '2014'];
+$bmw = ['bmw', 'model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => '2015'];
+$toyota = ['toyota', 'model' => 'Camry', 'speed' => 130, 'doors' => 4, 'year' => '2016'];
+$opel = ['opel', 'model' => 'Astra', 'speed' => 120, 'doors' => 5, 'year' => '2014'];
 
 $car = [];
 $car [] = $bmw;
 $car [] = $toyota;
 $car [] = $opel;
+for ($i = 0; $i < count($car); $i++) {
+    echo 'CAR ' .$car[$i][0] . ':<br>';
+    echo $car[$i]['model'] . ' - ' .
+        $car[$i]['speed'] . ' - ' .
+        $car[$i]['doors'] . ' - ' .
+        $car[$i]['year'] . '<br>';
+}
+echo '<hr>';
 
-echo 'CAR bmv: <br>' . $car[0]['model'] . ' - ' . $car[0]['speed'] . ' - ' .
-    $car[0]['doors'] . ' - ' . $car[0]['year'] . '<br>';
-echo 'CAR toyota: <br>' . $car[1]['model'] . ' - ' . $car[1]['speed'] . ' - ' .
-    $car[1]['doors'] . ' - ' . $car[1]['year'] . '<br>';
-echo 'CAR opel: <br>' . $car[2]['model'] . ' - ' . $car[2]['speed'] . ' - ' .
-    $car[2]['doors'] . ' - ' . $car[2]['year'] . '<hr>';
 ?>
     <!--Задание #7-->
 // Не соответствует заданию
@@ -102,16 +89,13 @@ echo 'CAR opel: <br>' . $car[2]['model'] . ' - ' . $car[2]['speed'] . ' - ' .
         for ($r = 1; $r <= 10; $r++) {
             echo '<tr>';
             for ($c = 1; $c <= 10; $c++) {
-                echo '<td>';
-                $result = ($r * $c);
-                if (($result % 2) == 0) {
-                    echo '(' . $result . ')';
-                } elseif (($result % 2) == 1) {
-                    echo '[' . $result . ']';
+                if (($r % 2) == 0 && ($c % 2) == 0) {
+                    echo '<td>(' . $r * $c . ')</td>';
+                } elseif (($r % 2) != 0 && ($c % 2) != 0) {
+                    echo '<td>[' . $r * $c . ']</td>';
                 } else {
-                    echo $result;
+                    echo '<td>' . $r * $c . '</td>';
                 }
-                echo '</td>';
             }
             echo '</tr>';
         }
@@ -129,10 +113,11 @@ echo $str;
 $arr = explode(' ', $str);
 echo '<pre>';
 print_r($arr);
-$i = 0;
+
+echo $arr[0];
+$i = 1;
 while ($i < count($arr)) {
+    echo '_' . $arr[$i];
     $i++;
 }
-$str = implode('_', $arr);
-echo $str;
 ?>
