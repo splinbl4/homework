@@ -71,12 +71,12 @@ $car = [];
 $car [] = $bmw;
 $car [] = $toyota;
 $car [] = $opel;
-for ($i = 0; $i < count($car); $i++) {
-    echo 'CAR ' .$car[$i][0] . ':<br>';
-    echo $car[$i]['model'] . ' - ' .
-        $car[$i]['speed'] . ' - ' .
-        $car[$i]['doors'] . ' - ' .
-        $car[$i]['year'] . '<br>';
+foreach ($car as $item) {
+    echo 'CAR ' . $item[0] . ':<br>';
+    echo $item['model'] . ' - ' .
+        $item['speed'] . ' - ' .
+        $item['doors'] . ' - ' .
+        $item['year'] . '<br>';
 }
 echo '<hr>';
 
