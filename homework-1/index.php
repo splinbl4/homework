@@ -64,17 +64,21 @@ switch ($day) {
 // Не принято
 // Элемента $item[0] не существует
 
-$bmw = ['bmw', 'model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => '2015'];
-$toyota = ['toyota', 'model' => 'Camry', 'speed' => 130, 'doors' => 4, 'year' => '2016'];
-$opel = ['opel', 'model' => 'Astra', 'speed' => 120, 'doors' => 5, 'year' => '2014'];
+$bmw = ['model' => 'X5', 'speed' => 120, 'doors' => 5, 'year' => '2015'];
+$toyota = ['model' => 'Camry', 'speed' => 130, 'doors' => 4, 'year' => '2016'];
+$opel = ['model' => 'Astra', 'speed' => 120, 'doors' => 5, 'year' => '2014'];
 
-$car = [];
-$car [] = $bmw;
-$car [] = $toyota;
-$car [] = $opel;
-foreach ($car as $item) {
-    echo 'CAR ' . $item[0] . ':<br>';
-    echo $item['model'] . ' - ' .
+$car = [
+    'bmv' => $bmw,
+    'toyota' => $toyota,
+    'opel' => $opel
+];
+
+//echo '<pre>';
+//print_r($car);
+foreach ($car as $car_make => $item) {
+    echo 'CAR ' . $car_make . ': ' . '<br>' .
+        $item['model'] . ' - ' .
         $item['speed'] . ' - ' .
         $item['doors'] . ' - ' .
         $item['year'] . '<br>';
@@ -110,15 +114,14 @@ echo '<hr>';
 // Массив необходимо развернуть в цикле, после этого склеить в строку, Только лишь потом вывести результат.
 
 $str = 'Вам еще работать и работать';
-echo $str;
+echo $str . '<br>';
 $arr = explode(' ', $str);
-echo '<pre>';
 print_r($arr);
-
-echo $arr[0];
-$i = 1;
+$str = '';
+$i = 0;
 while ($i < count($arr)) {
-    echo '_' . $arr[$i];
+    $str .= $arr[$i] . '_';
     $i++;
 }
+echo '<br>' . $str = rtrim($str, '_');
 ?>
