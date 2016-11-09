@@ -1,7 +1,8 @@
 <?php
+// ДЗ принято полностью
 
 //Задание #1
-
+// Принято
 function arr_show($arr, $bool = false)
 {
     foreach ($arr as $item) {
@@ -18,7 +19,7 @@ echo $str . '<hr>';
 
 
 //Задание #2
-
+// Принято
 function result_show($arr_num, $op)
 {
     echo implode($op, $arr_num) . ' = ';
@@ -58,7 +59,7 @@ echo '<hr>';
 
 
 //Задание #3
-
+// Принято
 function calcEverything($str1)
 {
     if (is_string($str1)) {
@@ -75,7 +76,7 @@ echo '<hr>';
 
 
 //Задание #4
-
+// Принято
 function result_show1($num1, $num2)
 {
     echo '<table cellpadding="5" border="1">';
@@ -96,6 +97,8 @@ result_show1(8, 8);
 
 
 //Задание #5
+// Принято
+// Разобраться, почему для строки 232 результат корректный, а для приведенной ниже - нет
 
 function result_show2($str2)
 {
@@ -123,6 +126,7 @@ echo '<hr>';
 
 
 //Задание #6
+// Принято
 
 echo 'Текущая дата: ' . date('d.m.Y H:i') . '<br>';
 $mt = mktime(0, 0, 0, 02, 24, 2016);
@@ -130,6 +134,7 @@ echo 'Дата/Время: ' . date('d.m.Y H:i:s', $mt) . '<hr>';
 
 
 //Задание #7
+// Принято
 
 $st1 = 'Карл у Клары украл Кораллы';
 $st1 = str_replace('К', '', $st1);
@@ -140,7 +145,7 @@ echo $st2 . '<hr>';
 
 
 //Задание #8
-
+// Принято
 
 function result_show4($str4)
 {
@@ -163,12 +168,14 @@ echo '<hr>';
 
 
 //Задание #9
+// Принято
 
 $test = file_get_contents('test.txt');
 echo $test . '<hr>';
 
 
 //Задание #10
+// Принято
 
 $fp = fopen('anothertest.txt', 'w');
 fwrite($fp, 'Hello again!');
