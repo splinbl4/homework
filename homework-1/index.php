@@ -117,11 +117,12 @@ $str = 'Вам еще работать и работать';
 echo $str . '<br>';
 $arr = explode(' ', $str);
 print_r($arr);
-$str = '';
+
 $i = 0;
 while ($i < count($arr)) {
-    $str .= $arr[$i] . '_';
+    $arr[$i];
     $i++;
 }
-echo '<br>' . $str = rtrim($str, '_');
+$str = implode($arr, '_');
+echo '<br>' . $str;
 ?>
