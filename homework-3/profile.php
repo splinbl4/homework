@@ -32,15 +32,16 @@ if (isset($_POST['submit'])) {
             $errors[] = 'Пару слов о себе!';
         }
     }
-    $sql = "UPDATE user SET name = '$name', age = '$age', description = '$description' WHERE id = '$id'";
-    $result = $connection -> query($sql);
-    echo "Изменения сохранены! Перейдите в Ваш <a href='personal_area.php'>личный кабинет</a><br>";
-    $sql = "SELECT * FROM user";
+    $sql = "SELECT * FROM user WHERE id = '{$_SESSION['id']}'";
     $result = $connection -> query($sql);
     $record = mysqli_fetch_array($result);
-//    $_SESSION['name'] = $record['name'];
-//    $_SESSION['age'] = $record['age'];
-//    $_SESSION['description'] = $record['description'];
+    $sql = "UPDATE user SET name = '$name', age = '$age', description = '$description' WHERE id = '{$_SESSION['id']}'";
+    $result = $connection -> query($sql);
+    echo "Изменения сохранены! Перейдите в Ваш <a href='personal_area.php'>личный кабинет</a><br>";
+
+    $_SESSION['name'] = $record['name'];
+    $_SESSION['age'] = $record['age'];
+    $_SESSION['description'] = $record['description'];
 
     if (!empty($errors)) {
         echo $errors[0];
@@ -94,18 +95,18 @@ if (isset($_POST['photo'])) {
 } else {
     echo 'Выберите фото для удаления<br>';
 }
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM user WHERE id = '{$_SESSION['id']}'";
 $result = $connection -> query($sql);
-$record = mysqli_fetch_array($result);
+$record = mysqli_fetch_object($result);
 ?>
 
 <form method="POST" enctype = "multipart/form-data">
     <label>Имя:</label><br>
-    <input name="name" type="text" value="<?php echo $record['name']?>"><br>
+    <input name="name" type="text" value="<?php echo $record->name?>"><br>
     <label>Возраст:</label><br>
-    <input name="age" type="number" value="<?php echo $record['age']?>"><br>
+    <input name="age" type="number" value="<?php echo $record->age?>"><br>
     <label>О себе:</label><br>
-    <textarea name="description" cols="40" rows="3"><?php echo $record['description']?></textarea><br>
+    <textarea name="description" cols="40" rows="3"><?php echo $record->description?></textarea><br>
     <label>Загрузить фото:</label><br>
     <input name="file" type="file">
     <button name="submit3" type="submit">Загрузить</button><br><br>

@@ -22,12 +22,12 @@ if (isset($_POST['submit1'])) {
     }
     $sql = "SELECT * FROM user WHERE login = '$login' AND password = '$password'";
     $result = $connection -> query($sql);
-    $records = $result -> fetch_all(MYSQLI_ASSOC);
-    if (!mysqli_num_rows($result)) {
+    $records = mysqli_fetch_object($result);
+    if ($login != $records->login and $password != $records->password) {
         $errors[] = 'Логин или пароль неверный';
     } else {
-        $_SESSION['login'] = $records[0]['login'];
-        $_SESSION['id'] = $records[0]['id'];
+        $_SESSION['login'] = $records->login;
+        echo $_SESSION['id'] = $records->id;
         echo "Вы успешно вошли на сайт!<br> 
         Перейти на <a href='index.php'>Главную страницу</a>";
 

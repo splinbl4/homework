@@ -1,6 +1,6 @@
 <?php
 require "bd.php";
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM user WHERE id = '{$_SESSION['id']}'";
 $result = $connection -> query($sql);
 $record = mysqli_fetch_object($result);
 ?>

@@ -31,8 +31,8 @@ if (isset($_POST['submit'])) {
     }
     $sql = "SELECT * FROM user";
     $result = $connection -> query($sql);
-    $records = $result -> fetch_all(MYSQLI_ASSOC);
-    if (mysqli_num_rows($result)) {
+    $records = mysqli_fetch_object($result);
+    if ($login != $records->login) {
         $sql = "INSERT INTO user (login, password) VALUES('$login', '$password')";
         $result = $connection -> query($sql);
         echo "Вы успешно зарегестрировались!<br>
