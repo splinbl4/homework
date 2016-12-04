@@ -1,4 +1,5 @@
 <?php
+// Принято
 require "bd.php";
 if (isset($_SESSION['login']) and isset($_SESSION['id'])) {
     echo 'Авторизован<br>';
