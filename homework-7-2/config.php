@@ -17,3 +17,9 @@ $capsule->addConnection([
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
+
+class Product extends Illuminate\Database\Eloquent\Model
+{
+
+}

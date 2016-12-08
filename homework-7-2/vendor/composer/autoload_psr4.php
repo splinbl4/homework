@@ -12,5 +12,6 @@ return array(
     'Illuminate\\Database\\' => array($vendorDir . '/illuminate/database'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
+    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
 );
